@@ -1,102 +1,173 @@
 <?php
 
-use Livewire\Component;
-use Livewire\Attributes\{Layout, Title};
-use App\Models\User;
-use Illuminate\Validation\Rules\Password;
 use Developermithu\Tallcraftui\Traits\WithTcToast;
+use Livewire\Attributes\Computed;
+use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
+use Livewire\Component;
 
-new #[Layout('components.layouts.home')] #[Title('TallCraftUI - Laravel Blade UI Components Library for TALL Stack')] class extends Component {
+new #[Layout('components.layouts.home')] #[Title('TallCraftUI - Blade UI components for Laravel and Livewire')] class extends Component
+{
     use WithTcToast;
 
-    public string $content = 'Hello **world**!';
+    public string $showcaseTab = 'form';
 
-    public string $name = '';
-    public string $email = '';
-    public string $user_id = '';
-    public string $password = 'password';
-    public string $color = '#14b8a6';
-    public string $textarea = '';
-    public bool $terms;
+    // Syntax example
+    public string $subscribeEmail = '';
 
-    public string $activeTab = 'tab1';
-    public bool $openModal = false;
-    public bool $openDrawer = false;
+    // Form example
+    public string $projectName = '';
 
-    public function showToast()
+    public string $projectDomain = '';
+
+    public string $projectRegion = 'eu-west';
+
+    public string $projectStack = 'livewire';
+
+    public string $projectDescription = '';
+
+    public bool $projectPrivate = true;
+
+    // Table example
+    public string $search = '';
+
+    // Settings example
+    public string $settingsName = 'Olivia Martin';
+
+    public string $settingsEmail = 'olivia@northwind.test';
+
+    public bool $notifyOrders = true;
+
+    public bool $notifyMentions = true;
+
+    public bool $notifyDigest = false;
+
+    // Sign in example
+    public string $signInEmail = '';
+
+    public string $signInPassword = '';
+
+    public bool $remember = false;
+
+    // Dialogs example
+    public bool $confirmDelete = false;
+
+    public bool $inviteDrawer = false;
+
+    public string $inviteEmail = '';
+
+    public string $inviteRole = 'member';
+
+    #[Computed]
+    public function members(): array
     {
-        $this->success(title: 'User created successfully', description: 'Your changes have been saved permanently.', showCloseIcon: true, showProgress: true, position: 'top-right');
+        $members = [
+            ['name' => 'Olivia Martin', 'email' => 'olivia@northwind.test', 'role' => 'Owner', 'status' => 'Active', 'active' => 'Just now'],
+            ['name' => 'Jackson Lee', 'email' => 'jackson@northwind.test', 'role' => 'Developer', 'status' => 'Active', 'active' => '2 hours ago'],
+            ['name' => 'Isabella Nguyen', 'email' => 'isabella@northwind.test', 'role' => 'Designer', 'status' => 'Invited', 'active' => 'Never'],
+            ['name' => 'William Kim', 'email' => 'william@northwind.test', 'role' => 'Support', 'status' => 'Active', 'active' => 'Yesterday'],
+            ['name' => 'Sofia Davis', 'email' => 'sofia@northwind.test', 'role' => 'Developer', 'status' => 'Suspended', 'active' => '3 weeks ago'],
+        ];
+
+        $search = mb_strtolower(trim($this->search));
+
+        return array_values(array_filter($members, fn (array $member) => $search === ''
+            || str_contains(mb_strtolower($member['name'].' '.$member['role'].' '.$member['email']), $search)));
     }
 
-    public function createUser()
+    public function subscribe(): void
+    {
+        $this->validate(['subscribeEmail' => ['required', 'email']], [], ['subscribeEmail' => 'email']);
+
+        $this->reset('subscribeEmail');
+        $this->success(title: 'Subscribed', description: 'This is a demo, so nothing was sent.');
+    }
+
+    public function createProject(): void
     {
         $this->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'unique:users'],
-            'password' => ['required', 'string', Password::min(8)->letters()->mixedCase()->numbers()->symbols()->uncompromised()],
-            'color' => ['required', 'string', 'hex_color'],
-            'user_id' => ['required', 'integer', 'exists:users,id'],
-            'terms' => ['required', 'boolean'],
+            'projectName' => ['required', 'string', 'min:3', 'max:40'],
+            'projectDomain' => ['nullable', 'regex:/^[a-z0-9.-]+\.[a-z]{2,}$/i'],
+            'projectDescription' => ['nullable', 'string', 'max:200'],
+        ], [
+            'projectDomain.regex' => 'Enter a domain like northwind.test, without https://.',
+        ], [
+            'projectName' => 'project name',
+            'projectDomain' => 'domain',
+            'projectDescription' => 'description',
         ]);
 
-        dd('dd');
+        $this->success(title: 'Project created', description: "{$this->projectName} is ready. This demo doesn't save anything.");
+        $this->resetProject();
+    }
+
+    public function resetProject(): void
+    {
+        $this->reset('projectName', 'projectDomain', 'projectDescription');
+        $this->resetValidation();
+    }
+
+    public function saveSettings(): void
+    {
+        $this->validate([
+            'settingsName' => ['required', 'string', 'max:60'],
+            'settingsEmail' => ['required', 'email'],
+        ], [], ['settingsName' => 'full name', 'settingsEmail' => 'email']);
+
+        $this->success(title: 'Settings saved');
+    }
+
+    public function signIn(): void
+    {
+        $this->validate([
+            'signInEmail' => ['required', 'email'],
+            'signInPassword' => ['required', 'min:8'],
+        ], [], ['signInEmail' => 'email', 'signInPassword' => 'password']);
+
+        $this->addError('signInEmail', 'These credentials do not match our records.');
+    }
+
+    public function deleteProject(): void
+    {
+        $this->confirmDelete = false;
+        $this->success(title: 'Project deleted', description: 'Just kidding, this is a demo.');
+    }
+
+    public function sendInvite(): void
+    {
+        $this->validate(['inviteEmail' => ['required', 'email']], [], ['inviteEmail' => 'email address']);
+
+        $this->inviteDrawer = false;
+        $this->success(title: 'Invite sent', description: "{$this->inviteEmail} was invited as ".ucfirst($this->inviteRole).'.');
+        $this->reset('inviteEmail');
+    }
+
+    public function notify(string $type): void
+    {
+        match ($type) {
+            'error' => $this->error(title: 'Payment failed', description: 'The card was declined. Try another payment method.'),
+            'warning' => $this->warning(title: 'Storage almost full', description: "You've used 92% of your plan."),
+            'info' => $this->info(title: 'New version available', description: 'Refresh to get the latest features.'),
+            default => $this->success(title: 'Changes saved', description: 'Your project settings were updated.'),
+        };
     }
 }; ?>
 
 <div>
     @slot('metaTags')
-        <x-meta-tags title="TallCraftUI - Laravel Blade UI Components Library for TALL Stack"
-            description="TallCraftUI is a Laravel blade UI components library for TALL stack, offering 30+ customizable components that seamlessly integrate with Livewire applications." />
+        <x-meta-tags title="TallCraftUI - Blade UI components for Laravel, Livewire and Tailwind CSS"
+            description="TallCraftUI is an open source Blade UI component library for Laravel, Livewire, Alpine.js and Tailwind CSS. 35 customizable components: forms, tables, modals, toasts and more." />
     @endslot
 
-    <div class="container relative isolate">
-        <div class="grid grid-cols-12 py-12 gap-y-8 lg:gap-x-8 md:py-16">
-            <x-home.hero-section />
+    @php $members = $this->members; @endphp
 
-            {{-- Right Side --}}
-            <aside class="space-y-5 md:space-y-6 col-span-full lg:col-span-7">
-                <div class="grid items-start grid-cols-12 gap-4">
-                    <x-home.accordion-section />
-                    <x-home.interactive-components />
-                </div>
-
-                <x-range data-pan="range" value="58" teal />
-
-                <div class="grid items-start grid-cols-12 gap-4">
-                    <div class="space-y-3 col-span-full lg:col-span-4">
-                        <x-home.spinner-section />
-                        <x-home.clipboard-section />
-                        <x-home.tooltip-section />
-                    </div>
-
-                    <div class="space-y-3 col-span-full lg:col-span-8">
-                        <x-home.icon-section />
-                        <x-home.badge-section />
-                        <x-home.button-section />
-                    </div>
-                </div>
-
-                <x-home.table-section />                
-
-                <div class="grid items-start grid-cols-12 gap-4">
-                    <x-home.menu-section />  
-
-                    <div class="space-y-4 col-span-full xl:col-span-7 2xl:col-span-8">
-                        <x-home.stat-section /> 
-                        <x-home.card-section /> 
-                    </div>
-                </div>
-
-                <x-home.markdown-section /> 
-            </aside>
-        </div>
-        
-        <x-home.framework-comparison />
-        <x-home.modals />
-    </div>
-
-    @assets
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
-    @endassets
+    <x-home.hero />
+    <x-home.stack />
+    <x-home.features />
+    @include('partials.home.showcase')
+    @include('partials.home.syntax')
+    <x-home.comparison />
+    <x-home.components />
+    <x-home.install />
+    <x-home.community />
 </div>

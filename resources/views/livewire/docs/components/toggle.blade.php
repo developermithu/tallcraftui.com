@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Toggle components - Tallcraftui')] 
+#[Title('Toggle - TallCraftUI Components')] 
 class extends Component {
     //
 }; ?>
@@ -64,7 +64,7 @@ class extends Component {
                 <x-toggle checked cyan />
                 <x-toggle checked sky />
                 <x-toggle checked blue />
-                <x-toggle checked Indigo />
+                <x-toggle checked indigo />
                 <x-toggle checked violet />
                 <x-toggle checked purple />
                 <x-toggle checked fuchsia />
@@ -87,13 +87,4 @@ class extends Component {
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Text left" />
-            <x-on-this-page.item title="Size variants" />
-            <x-on-this-page.item title="Color variants" />
-            <x-on-this-page.item title="Customize toggle" />
-        </x-on-this-page>
-    @endslot
 </div>

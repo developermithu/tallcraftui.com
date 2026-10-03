@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Checkbox components - Tallcraftui')] 
+#[Title('Checkbox - TallCraftUI Components')] 
 class extends Component {
     //
 }; ?>
@@ -58,7 +58,7 @@ class extends Component {
                 <x-checkbox label="Cyan" checked cyan />
                 <x-checkbox label="Sky" checked sky />
                 <x-checkbox label="Blue" checked blue />
-                <x-checkbox label="Indigo" checked Indigo />
+                <x-checkbox label="Indigo" checked indigo />
                 <x-checkbox label="Violet" checked violet />
                 <x-checkbox label="Purple" checked purple />
                 <x-checkbox label="Fuchsia" checked fuchsia />
@@ -92,13 +92,4 @@ class extends Component {
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Alignment" />
-            <x-on-this-page.item title="Color variants" />
-            <x-on-this-page.item title="Size variants" />
-            <x-on-this-page.item title="Rounded corner" />
-        </x-on-this-page>
-    @endslot
 </div>

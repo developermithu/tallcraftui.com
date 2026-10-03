@@ -11,4 +11,4 @@ Allow: /public/
 Allow: /public/assets/
 Allow: /public/build/
 
-Sitemap: /sitemap.xml
+Sitemap: https://tallcraftui.com/sitemap.xml

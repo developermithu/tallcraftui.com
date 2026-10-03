@@ -409,20 +409,4 @@
         @endverbatim
     </x-code-block>
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Simple table" />
-            <x-on-this-page.item title="Without border" />
-            <x-on-this-page.item title="Striped style" />
-            <x-on-this-page.item title="Without header" />
-            <x-on-this-page.item title="Hoverable" />
-            <x-on-this-page.item title="Clickable" />
-            <x-on-this-page.item title="With searching" />
-            <x-on-this-page.item title="With pagination" />
-            <x-on-this-page.item title="With per page" />
-            <x-on-this-page.item title="With sorting" />
-            <x-on-this-page.item title="Without loading spinner" new />
-        </x-on-this-page>
-    @endslot
 </div>

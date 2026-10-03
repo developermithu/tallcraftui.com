@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Separator components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Separator - TallCraftUI Components')] class extends Component {
     //
 }; ?>
 
@@ -40,12 +40,5 @@ new #[Layout('components.layouts.app')] #[Title('Separator components - Tallcraf
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Customization" />
-        </x-on-this-page>
-    @endslot
 </div>
-
 

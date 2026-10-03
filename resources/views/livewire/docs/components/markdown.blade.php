@@ -4,7 +4,7 @@ use Livewire\Component;
 use Livewire\Attributes\{Layout, Title, Validate};
 use App\Models\User;
 
-new #[Layout('components.layouts.app')] #[Title('Markdown components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Markdown - TallCraftUI Components')] class extends Component {
     public string $content = 'Hello **world**!';
     public string $content2 = 'Custom **configuration**';
 
@@ -111,10 +111,4 @@ new #[Layout('components.layouts.app')] #[Title('Markdown components - Tallcraft
         @endverbatim
     </x-code-block>
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Custom configuration" />
-        </x-on-this-page>
-    @endslot
 </div>

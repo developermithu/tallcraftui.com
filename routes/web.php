@@ -3,17 +3,20 @@
 use App\Livewire\Docs\Components\Table;
 use App\Livewire\Docs\Components\Toast;
 use App\Livewire\Pages\Analytics;
+use App\Support\Docs;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::livewire('/', 'pages::index')->name('home');
-Route::livewire('/docs', 'docs.installation')->name('docs');
+Route::livewire('/docs', 'docs.index')->name('docs');
 Route::livewire('/analytics', Analytics::class)->name('analytics');
 
 Route::group(['prefix' => 'docs', 'as' => 'docs.'], function () {
     Route::livewire('/installation', 'docs.installation')->name('installation');
     Route::livewire('/configuration', 'docs.configuration')->name('configuration');
+    Route::livewire('/theming', 'docs.theming')->name('theming');
     Route::livewire('/upgrading', 'docs.upgrading')->name('upgrading');
+    Route::livewire('/changelog', 'docs.changelog')->name('changelog');
     Route::livewire('/how-to-contribute', 'docs.contribution')->name('contribution');
 
     // Form Components
@@ -54,11 +57,18 @@ Route::group(['prefix' => 'docs', 'as' => 'docs.'], function () {
         Route::livewire('/tooltip', 'docs.components.tooltip')->name('tooltip');
         Route::livewire('/progress', 'docs.components.progress')->name('progress');
         Route::livewire('/progress-radial', 'docs.components.progress-radial')->name('progress-radial');
+        Route::livewire('/theme-toggle', 'docs.components.theme-toggle')->name('theme-toggle');
 
         Route::livewire('/table', Table::class)->name('table');
         Route::livewire('/toast', Toast::class)->name('toast');
     });
 });
+
+// Search index for the docs command palette (Cmd/Ctrl + K).
+Route::get('/search-index.json', fn (Docs $docs) => response()
+    ->json($docs->searchIndex())
+    ->header('Cache-Control', 'public, max-age=3600'))
+    ->name('search.index');
 
 Route::get('clear', function () {
     Artisan::call('optimize:clear');

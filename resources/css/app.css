@@ -1,11 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap')
-layer(base);
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap')
-layer(base);
-
-/* Alogolia DocSearch */
-@import './docsearch.css';
-
 @import './tallcraftui.css';
 
 @import 'tailwindcss';
@@ -13,9 +5,21 @@ layer(base);
 @plugin '@tailwindcss/forms';
 
 @source '../../vendor/developermithu/tallcraftui/src/**/*.php';
+@source '../../config/docs.php';
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
+/*
+|--------------------------------------------------------------------------
+| Design tokens
+|--------------------------------------------------------------------------
+|
+| Neutrals use Tailwind's `gray` scale because TallCraftUI components use it
+| for their own dark mode, so the site chrome and the live demos match.
+| Teal is the single accent. `primary` is dark enough for white button text
+| to pass WCAG AA.
+|
+*/
 @theme {
   --breakpoint-*: initial;
   --breakpoint-xxs: 375px;
@@ -26,30 +30,56 @@ layer(base);
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
 
-  --font-inter:
-    Inter, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+  --font-sans:
+    'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-lato:
-    Lato, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono:
+    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', monospace;
 
-  --color-primary: #23b9ad;
-  --color-secondary: #6167ef;
+  /* Legacy aliases still used by a few demo snippets */
+  --font-inter: var(--font-sans);
+  --font-lato: var(--font-sans);
+  --font-display: var(--font-sans);
+
+  --color-primary: #0e7c72;
+  --color-secondary: #5b61e8;
+
+  --color-brand-50: #effcfa;
+  --color-brand-100: #c8f5ee;
+  --color-brand-200: #93eadd;
+  --color-brand-300: #57d8c8;
+  --color-brand-400: #2abfae;
+  --color-brand-500: #15a395;
+  --color-brand-600: #0e7c72;
+  --color-brand-700: #0f655e;
+  --color-brand-800: #11514c;
+  --color-brand-900: #12433f;
+
+  --color-code: #0d1117;
+  --color-code-line: #1b2230;
+
+  --radius-control: 0.375rem;
+  --radius-panel: 0.625rem;
+  --radius-frame: 0.875rem;
+
+  --shadow-float: 0 1px 2px rgb(16 24 40 / 0.06), 0 12px 32px -8px rgb(16 24 40 / 0.18);
 }
 
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
+  max-width: 88rem;
+
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+
+  @media (width >= 64rem) {
+    padding-inline: 2rem;
+  }
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
@@ -58,122 +88,227 @@ layer(base);
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+
+  .dark *,
+  .dark ::after,
+  .dark ::before {
+    border-color: var(--color-gray-800, currentColor);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    /* Sticky header, plus the mobile "On this page" bar below xl */
+    scroll-padding-top: 7.5rem;
+
+    @media (width >= 80rem) {
+      scroll-padding-top: 5.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-white font-sans text-gray-700 antialiased dark:bg-gray-900 dark:text-gray-300;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans text-gray-950 dark:text-white;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-brand-400) 30%, transparent);
+  }
+
+  [x-cloak] {
+    display: none !important;
+  }
 }
 
-@utility site-gradient {
-  @apply bg-no-repeat bg-linear-to-tl text-slate-900 from-white via-white to-teal-100/30 dark:bg-slate-900 dark:from-slate-900 dark:via-slate-900 dark:to-teal-600/10 dark:text-slate-400;
+/*
+|--------------------------------------------------------------------------
+| Type
+|--------------------------------------------------------------------------
+*/
+@utility text-display {
+  font-size: clamp(2.4rem, 1.5rem + 3.4vw, 4.25rem);
+  line-height: 1.04;
+  font-weight: 650;
+  font-stretch: 86%;
+  letter-spacing: -0.028em;
+}
+
+@utility text-title {
+  font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.5rem);
+  line-height: 1.1;
+  font-weight: 650;
+  font-stretch: 88%;
+  letter-spacing: -0.025em;
+}
+
+@utility code-inline {
+  @apply rounded-[5px] border border-gray-200 bg-gray-50 px-1.5 py-px font-mono text-[0.84em] font-medium text-gray-900 box-decoration-clone dark:border-white/10 dark:bg-white/5 dark:text-gray-100;
+  overflow-wrap: anywhere;
+}
+
+@utility kbd {
+  @apply inline-flex h-5 min-w-5 items-center justify-center rounded border border-gray-200 bg-white px-1 font-sans text-[11px] font-medium text-gray-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Documentation prose
+|--------------------------------------------------------------------------
+*/
+@utility prose-docs {
+  @apply text-[15.5px] leading-7 text-gray-700 dark:text-gray-300;
+
+  /* Element styles skip live previews and anything marked .not-prose */
+  & > * + *,
+  & > div:only-child > * + * {
+    margin-top: 1.25rem;
+  }
+
+  & :where(h2):not(:where(.not-prose, .not-prose *)) {
+    @apply mt-14 text-[1.4rem] leading-snug font-semibold tracking-tight;
+  }
+
+  & :where(h3):not(:where(.not-prose, .not-prose *)) {
+    @apply mt-10 text-lg leading-snug font-semibold;
+  }
+
+  & > header + * :where(h2):first-child,
+  & > div:first-child > header + * :where(h2):first-child {
+    margin-top: 0;
+  }
+
+  & :where(p, li):not(:where(.not-prose, .not-prose *)) {
+    max-width: 72ch;
+  }
+
+  & :where(a):not(:where([class], .not-prose *)) {
+    @apply font-medium text-brand-700 underline decoration-brand-500/40 underline-offset-[3px] transition-colors hover:decoration-brand-500 dark:text-brand-300;
+  }
+
+  & :where(strong):not(:where(.not-prose *)) {
+    @apply font-semibold text-gray-900 dark:text-white;
+  }
+
+  & :where(ul:not([class])):not(:where(.not-prose *)),
+  & :where(ol:not([class])):not(:where(.not-prose *)) {
+    @apply space-y-2 pl-5;
+  }
+
+  & :where(ul:not([class])):not(:where(.not-prose *)) {
+    list-style: disc;
+  }
+
+  & :where(ol:not([class])):not(:where(.not-prose *)) {
+    list-style: decimal;
+  }
+
+  & :where(li):not(:where(.not-prose *))::marker {
+    @apply text-gray-400 dark:text-gray-500;
+  }
+
+  & :where(:not(pre) > code):not(:where(.not-prose *)) {
+    @apply code-inline;
+  }
+
+  & :where(hr):not(:where(.not-prose *)) {
+    @apply my-10 border-gray-200 dark:border-gray-800;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Code
+|--------------------------------------------------------------------------
+|
+| Torchlight inlines its theme background; the panel provides the surface so
+| every block looks the same in light and dark mode.
+|
+*/
+@utility code-surface {
+  @apply bg-code text-[13px] leading-[1.7] text-gray-200;
+}
+
+pre {
+  @apply m-0 overflow-x-auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 0.15) transparent;
+}
+
+pre code.torchlight {
+  @apply block min-w-max py-4 font-mono text-[13px] leading-[1.7];
+  background-color: transparent !important;
+}
+
+pre code.torchlight .line {
+  @apply px-4 sm:px-5;
+}
+
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+  @apply mr-4;
+}
+
+pre code:not(.torchlight) {
+  @apply block min-w-max px-4 py-4 font-mono sm:px-5;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Example previews
+|--------------------------------------------------------------------------
+*/
+@utility preview-canvas {
+  background-color: var(--color-white);
+  background-image: radial-gradient(var(--color-gray-200) 1px, transparent 1px);
+  background-size: 16px 16px;
+
+  .dark & {
+    background-color: var(--color-gray-900);
+    background-image: radial-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  }
 }
 
 @utility custom-scrollbar {
-  scrollbar-width: none;
-  /* Firefox */
-  transition:
-    scrollbar-color 0.3s,
-    scrollbar-width 0.3s;
-  /* Smooth transition for scrollbar appearance */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
 
-  /* WebKit Browsers */
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: transparent;
-    border-radius: 4px;
-    transition: background 0.3s;
-    /* Smooth transition for thumb color */
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-    transition: background 0.3s;
-    /* Smooth transition for track color */
-  }
-
-  &:hover::-webkit-scrollbar-thumb {
-    background: rgba(100, 100, 100, 0.4);
-  }
-
-  &:hover::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0);
-  }
-
-  /* Firefox */
   &:hover {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(100, 100, 100, 0.4) rgba(0, 0, 0, 0);
-    /* Thumb and track color */
+    scrollbar-color: rgb(120 120 120 / 0.35) transparent;
   }
 }
 
-@layer base {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @apply text-slate-900 dark:text-white font-inter;
-    }
-
-    h1 {
-        @apply text-[32px] leading-10;
-    }
-
-    h2 {
-        @apply text-2xl;
-    }
-
-    h3 {
-        @apply text-xl leading-8;
-    }
-
-    a {
-        @apply text-teal-500;
-    }
+/* Kept for the analytics page */
+@utility site-gradient {
+  @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-300;
 }
 
-code {
-    color: #ffbf54;
-    padding: 1px 6px;
-    border-radius: 3px;
-    font-size: 14px;
-    background: #292d3e;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
-
-/*
- Margin and rounding are personal preferences,
- overflow-x-auto is recommended.
-*/
-pre {
-    @apply my-4 overflow-x-auto rounded-sm;
-}
-
-/*
-Add some vertical padding and expand the width
-to fill its container. The horizontal padding
-comes at the line level so that background
-colors extend edge to edge.
-*/
-pre code.torchlight {
-    @apply block py-4 text-sm rounded-sm min-w-max;
-}
-
-/*
-Horizontal line padding.
-*/
-pre code.torchlight .line {
-    @apply px-4;
-}
-
-/*
-Push the code away from the line numbers and
-summary caret indicators.
-*/
-pre code.torchlight .line-number,
-pre code.torchlight .summary-caret {
-    @apply mr-4;
-}
-
-

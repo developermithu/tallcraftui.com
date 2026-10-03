@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Input components - Tallcraftui')] 
+#[Title('Input - TallCraftUI Components')] 
 class extends Component {
     //
 }; ?>
@@ -122,17 +122,4 @@ class extends Component {
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Required field" />
-            <x-on-this-page.item title="Icon" />
-            <x-on-this-page.item title="Prefix suffix" />
-            <x-on-this-page.item title="Prepend append" />
-            <x-on-this-page.item title="Inline" />
-            <x-on-this-page.item title="Size variants" new />
-            <x-on-this-page.item title="Rounded corner" />
-            <x-on-this-page.item title="Customize input" />
-        </x-on-this-page>
-    @endslot
 </div>
