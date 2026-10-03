@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-Documentation site for the [TallCraftUI](https://github.com/developermithu/tallcraftui) Blade component library (Laravel 12, Livewire 3 + Volt, Tailwind 4). Served locally by Herd at http://tallcraftui.test.
+Documentation site for the [TallCraftUI](https://github.com/developermithu/tallcraftui) Blade component library (Laravel 13, Livewire 4, Tailwind 4). The `3.x` branch documents TallCraftUI 3 (Livewire 4); `2.x` documents TallCraftUI 2 (Laravel 12, Livewire 3 + Volt). Served locally by Herd at http://tallcraftui-doc.test.
 
 ## Commands
 
@@ -17,11 +17,11 @@ Documentation site for the [TallCraftUI](https://github.com/developermithu/tallc
 
 ## Doc pages
 
-- Each component page is a Volt single-file component in `resources/views/livewire/docs/components/<name>.blade.php`, using `#[Layout('components.layouts.app')]` and `#[Title(...)]`. `table` and `toast` are the exceptions; they use class-based Livewire components in `app/Livewire/Docs/Components/`.
-- Write examples as `<x-code-block title="...">` wrapping `@verbatim('docs') ... @endverbatim`. The component strips `('docs')`, de-indents the code, shows it with Torchlight, and renders it live with `Blade::render()`. Any `wire:model` property used in an example must be declared on the page's Volt class. Show those properties to readers in a `@php // public int $x = 3; @endphp` comment inside the snippet.
+- Each component page is a Livewire 4 single-file component (`new class extends Livewire\Component`, no Volt) in `resources/views/livewire/docs/components/<name>.blade.php`, using `#[Layout('components.layouts.app')]` and `#[Title(...)]`. `table` and `toast` are the exceptions; they use class-based Livewire components in `app/Livewire/Docs/Components/`.
+- Write examples as `<x-code-block title="...">` wrapping `@verbatim('docs') ... @endverbatim`. The component strips `('docs')`, de-indents the code, shows it with Torchlight, and renders it live with `Blade::render()`. Any `wire:model` property used in an example must be declared on the page's component class. Show those properties to readers in a `@php // public int $x = 3; @endphp` comment inside the snippet.
 - `<x-on-this-page.item title="...">` anchors come from `Str::slug($title)`, so each one must match a `<x-code-block>` title exactly.
 - Every page sets SEO meta in `@slot('metaTags')` with `<x-meta-tags title=... description=... />`.
-- Adding a page means touching four places: the Volt view, a route in `routes/web.php` (named `docs.components.<name>`), an entry in `resources/views/livewire/partials/sidebar.blade.php`, and a `<url>` in the hand-maintained `public/sitemap.xml`.
+- Adding a page means touching four places: the component view, a `Route::livewire()` route in `routes/web.php` (named `docs.components.<name>`), an entry in `resources/views/livewire/partials/sidebar.blade.php`, and a `<url>` in the hand-maintained `public/sitemap.xml`.
 
 ## TallCraftUI package
 

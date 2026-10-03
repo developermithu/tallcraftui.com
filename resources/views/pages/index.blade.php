@@ -1,6 +1,6 @@
 <?php
 
-use Livewire\Volt\Component;
+use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 use App\Models\User;
 use Illuminate\Validation\Rules\Password;
