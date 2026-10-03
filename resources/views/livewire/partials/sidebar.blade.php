@@ -1,3 +1,9 @@
+<?php
+
+use Livewire\Component;
+
+new class extends Component {}; ?>
+
 <div class="lg:relative lg:block lg:flex-none"
     :class="{ 'fixed inset-0 z-99 h-screen bg-white dark:bg-slate-900 w-fit pl-6 shadow-sm': sidebarVisible, 'hidden': !
             sidebarVisible }">

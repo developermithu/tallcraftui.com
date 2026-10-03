@@ -1,6 +1,6 @@
 <?php
 
-use Livewire\Volt\Component;
+use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
 new #[Layout('components.layouts.app')] #[Title('Upgrading to V2 - Tallcraftui')] class extends Component {

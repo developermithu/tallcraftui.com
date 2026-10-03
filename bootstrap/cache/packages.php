@@ -20,13 +20,6 @@
       0 => 'Developermithu\\Tallcraftui\\TallCraftUiServiceProvider',
     ),
   ),
-  'gehrisandro/tailwind-merge-laravel' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'TailwindMerge\\Laravel\\TailwindMergeServiceProvider',
-    ),
-  ),
   'laravel/sail' => 
   array (
     'providers' => 
@@ -50,13 +43,6 @@
     'providers' => 
     array (
       0 => 'Livewire\\LivewireServiceProvider',
-    ),
-  ),
-  'livewire/volt' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Livewire\\Volt\\VoltServiceProvider',
     ),
   ),
   'nesbot/carbon' => 

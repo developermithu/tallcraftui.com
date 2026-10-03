@@ -1,7 +1,7 @@
 <?php
 
 use Livewire\Attributes\{Layout, Title};
-use Livewire\Volt\Component;
+use Livewire\Component;
 use App\Models\User;
 
 new #[Layout('components.layouts.app')] #[Title('Drawer components - Tallcraftui')] class extends Component {

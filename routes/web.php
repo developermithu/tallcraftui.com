@@ -5,80 +5,81 @@ use App\Livewire\Docs\Components\Toast;
 use App\Livewire\Pages\Analytics;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
-use Livewire\Volt\Volt;
 
-
-Volt::route('/', 'index')->name('home');
-Volt::route('/docs', 'docs.installation')->name('docs');
-Route::get('/analytics', Analytics::class)->name('analytics');
+Route::livewire('/', 'pages::index')->name('home');
+Route::livewire('/docs', 'docs.installation')->name('docs');
+Route::livewire('/analytics', Analytics::class)->name('analytics');
 
 Route::group(['prefix' => 'docs', 'as' => 'docs.'], function () {
-    Volt::route('/installation', 'docs.installation')->name('installation');
-    Volt::route('/configuration', 'docs.configuration')->name('configuration');
-    Volt::route('/upgrading', 'docs.upgrading')->name('upgrading');
-    Volt::route('/how-to-contribute', 'docs.contribution')->name('contribution');
+    Route::livewire('/installation', 'docs.installation')->name('installation');
+    Route::livewire('/configuration', 'docs.configuration')->name('configuration');
+    Route::livewire('/upgrading', 'docs.upgrading')->name('upgrading');
+    Route::livewire('/how-to-contribute', 'docs.contribution')->name('contribution');
 
     // Form Components
     Route::group(['prefix' => 'components', 'as' => 'components.'], function () {
-        Volt::route('/input', 'docs.components.input')->name('input');
-        Volt::route('/textarea', 'docs.components.textarea')->name('textarea');
-        Volt::route('/markdown', 'docs.components.markdown')->name('markdown');
-        Volt::route('/radio', 'docs.components.radio')->name('radio');
-        Volt::route('/checkbox', 'docs.components.checkbox')->name('checkbox');
-        Volt::route('/toggle', 'docs.components.toggle')->name('toggle');
-        Volt::route('/native-select', 'docs.components.native-select')->name('native-select');
-        Volt::route('/select', 'docs.components.select')->name('select');
-        Volt::route('/password', 'docs.components.password')->name('password');
-        Volt::route('/color-picker', 'docs.components.color-picker')->name('color-picker');
-        Volt::route('/range', 'docs.components.range')->name('range');
+        Route::livewire('/input', 'docs.components.input')->name('input');
+        Route::livewire('/textarea', 'docs.components.textarea')->name('textarea');
+        Route::livewire('/markdown', 'docs.components.markdown')->name('markdown');
+        Route::livewire('/radio', 'docs.components.radio')->name('radio');
+        Route::livewire('/checkbox', 'docs.components.checkbox')->name('checkbox');
+        Route::livewire('/toggle', 'docs.components.toggle')->name('toggle');
+        Route::livewire('/native-select', 'docs.components.native-select')->name('native-select');
+        Route::livewire('/select', 'docs.components.select')->name('select');
+        Route::livewire('/password', 'docs.components.password')->name('password');
+        Route::livewire('/color-picker', 'docs.components.color-picker')->name('color-picker');
+        Route::livewire('/range', 'docs.components.range')->name('range');
     });
 
     // UI Components
     Route::group(['prefix' => 'components', 'as' => 'components.'], function () {
-        Volt::route('/alert', 'docs.components.alert')->name('alert');
-        Volt::route('/avatar', 'docs.components.avatar')->name('avatar');
-        Volt::route('/badge', 'docs.components.badge')->name('badge');
-        Volt::route('/button', 'docs.components.button')->name('button');
-        Volt::route('/breadcrumb', 'docs.components.breadcrumb')->name('breadcrumb');
-        Volt::route('/dropdown', 'docs.components.dropdown')->name('dropdown');
-        Volt::route('/menu', 'docs.components.menu')->name('menu');
-        Volt::route('/modal', 'docs.components.modal')->name('modal');
-        Volt::route('/drawer', 'docs.components.drawer')->name('drawer');
-        Volt::route('/icon', 'docs.components.icon')->name('icon');
-        Volt::route('/rating', 'docs.components.rating')->name('rating');
-        Volt::route('/separator', 'docs.components.separator')->name('separator');
-        Volt::route('/stat', 'docs.components.stat')->name('stat');
-        Volt::route('/spinner', 'docs.components.spinner')->name('spinner');
-        Volt::route('/tab', 'docs.components.tab')->name('tab');
-        Volt::route('/accordion', 'docs.components.accordion')->name('accordion');
-        Volt::route('/card', 'docs.components.card')->name('card');
-        Volt::route('/clipboard', 'docs.components.clipboard')->name('clipboard');
-        Volt::route('/tooltip', 'docs.components.tooltip')->name('tooltip');
-        Volt::route('/progress', 'docs.components.progress')->name('progress');
-        Volt::route('/progress-radial', 'docs.components.progress-radial')->name('progress-radial');
+        Route::livewire('/alert', 'docs.components.alert')->name('alert');
+        Route::livewire('/avatar', 'docs.components.avatar')->name('avatar');
+        Route::livewire('/badge', 'docs.components.badge')->name('badge');
+        Route::livewire('/button', 'docs.components.button')->name('button');
+        Route::livewire('/breadcrumb', 'docs.components.breadcrumb')->name('breadcrumb');
+        Route::livewire('/dropdown', 'docs.components.dropdown')->name('dropdown');
+        Route::livewire('/menu', 'docs.components.menu')->name('menu');
+        Route::livewire('/modal', 'docs.components.modal')->name('modal');
+        Route::livewire('/drawer', 'docs.components.drawer')->name('drawer');
+        Route::livewire('/icon', 'docs.components.icon')->name('icon');
+        Route::livewire('/rating', 'docs.components.rating')->name('rating');
+        Route::livewire('/separator', 'docs.components.separator')->name('separator');
+        Route::livewire('/stat', 'docs.components.stat')->name('stat');
+        Route::livewire('/spinner', 'docs.components.spinner')->name('spinner');
+        Route::livewire('/tab', 'docs.components.tab')->name('tab');
+        Route::livewire('/accordion', 'docs.components.accordion')->name('accordion');
+        Route::livewire('/card', 'docs.components.card')->name('card');
+        Route::livewire('/clipboard', 'docs.components.clipboard')->name('clipboard');
+        Route::livewire('/tooltip', 'docs.components.tooltip')->name('tooltip');
+        Route::livewire('/progress', 'docs.components.progress')->name('progress');
+        Route::livewire('/progress-radial', 'docs.components.progress-radial')->name('progress-radial');
 
-        Route::get('/table', Table::class)->name('table');
-        Route::get('/toast', Toast::class)->name('toast');
+        Route::livewire('/table', Table::class)->name('table');
+        Route::livewire('/toast', Toast::class)->name('toast');
     });
 });
 
 Route::get('clear', function () {
     Artisan::call('optimize:clear');
+
     return back();
 });
 
 Route::get('optimize', function () {
     Artisan::call('optimize');
+
     return back();
 });
 
 Route::get('storage-link', function () {
     Artisan::call('storage:link');
+
     return back();
 });
 
-
 Route::get('fresh', function () {
     Artisan::call('migrate:fresh --seed --force');
+
     return back();
 });
