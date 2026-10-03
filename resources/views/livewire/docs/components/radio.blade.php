@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Radio components - Tallcraftui')] 
+#[Title('Radio - TallCraftUI Components')] 
 class extends Component {
     //
 }; ?>
@@ -56,7 +56,7 @@ class extends Component {
                 <x-radio label="Cyan" checked cyan />
                 <x-radio label="Sky" checked sky />
                 <x-radio label="Blue" checked blue />
-                <x-radio label="Indigo" checked Indigo />
+                <x-radio label="Indigo" checked indigo />
                 <x-radio label="Violet" checked violet />
                 <x-radio label="Purple" checked purple />
                 <x-radio label="Fuchsia" checked fuchsia />
@@ -76,12 +76,4 @@ class extends Component {
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Alignment" />
-            <x-on-this-page.item title="Color variants" />
-            <x-on-this-page.item title="Size variants" />
-        </x-on-this-page>
-    @endslot
 </div>

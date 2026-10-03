@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Accordion components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Accordion - TallCraftUI Components')] class extends Component {
     public string $activeItem = 'item-2';
 }; ?>
 
@@ -132,15 +132,4 @@ new #[Layout('components.layouts.app')] #[Title('Accordion components - Tallcraf
         @endverbatim
     </x-code-block>
 
-
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Active item" />
-            <x-on-this-page.item title="With plus minus icon" />
-            <x-on-this-page.item title="Without border" />
-            <x-on-this-page.item title="With active border" />
-            <x-on-this-page.item title="Customize accordion" />
-        </x-on-this-page>
-    @endslot
 </div>

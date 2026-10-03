@@ -1,18 +1,13 @@
-@props(['language' => 'blade', 'noRender' => false, 'noCopy' => false])
+@props(['language' => 'blade', 'noRender' => false, 'noCopy' => false, 'filename' => null, 'tab' => null, 'code' => null])
 
-<div {{ $attributes->class(['space-y-3 code-container relative']) }}>
-    <pre><x-torchlight-code language="{{ $language }}" 
-        @class([
-            'space-y-1 code',
-            'space-y-0!' => $attributes->get('space-none'),
-            'space-y-0.5!' => $attributes->get('space-0.5'),
-            'space-y-1!' => $attributes->get('space-1'),
-        ])
-        >
-                {{ $slot }}
-            </x-torchlight-code></pre>
+@php
+    $code = App\Support\Docs::cleanCode($code ?? (string) $slot);
+@endphp
 
-    @if (!$noCopy)
-        <x-copy-button class="top-0!" />
-    @endif
-</div>
+@if ($tab)
+    <x-docs.code-panel :code="$code" :language="$language" :copy="! $noCopy" :tab="$tab" />
+@else
+    <div {{ $attributes->except(['space-none', 'space-0.5', 'space-1'])->class('not-prose overflow-hidden rounded-[var(--radius-panel)] border border-gray-200 dark:border-gray-800') }}>
+        <x-docs.code-panel :code="$code" :language="$language" :copy="! $noCopy" :filename="$filename" />
+    </div>
+@endif

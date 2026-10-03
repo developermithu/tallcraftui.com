@@ -1,15 +1,15 @@
-# [TallCraftUI](https://github.com/developermithu/tallcraftui) 
+# [TallCraftUI](https://github.com/developermithu/tallcraftui)
 
 ## Introduction
 
-This is the source code of [tallcraftui.developermithu.com](https://tallcraftui.developermithu.com) 🚀
+This is the source code of [tallcraftui.com](https://tallcraftui.com) 🚀
 
 ## How to Contribute
 
-Clone the repository: 
+Clone the repository:
 
 ```bash
-git clone https://github.com/developermithu/tallcraftui.developermithu.com.git tallcraftui
+git clone https://github.com/developermithu/tallcraftui.com.git tallcraftui
 ```
 
 Move into the directory `cd tallcraftui` and run the following commands:
@@ -28,7 +28,6 @@ Start the development server:
 ```
 
 That's it ✅ visit http://tallcraftui.test
-
 
 Be sure to build the frontend assets by running `npm run build` or `pnpm build` before committing.
 

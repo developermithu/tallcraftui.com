@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Spinner components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Spinner - TallCraftUI Components')] class extends Component {
 
 }; ?>
 
@@ -39,7 +39,7 @@ new #[Layout('components.layouts.app')] #[Title('Spinner components - Tallcraftu
                 <x-spinner cyan />
                 <x-spinner sky />
                 <x-spinner blue />
-                <x-spinner Indigo />
+                <x-spinner indigo />
                 <x-spinner violet />
                 <x-spinner purple />
                 <x-spinner fuchsia />
@@ -80,7 +80,7 @@ new #[Layout('components.layouts.app')] #[Title('Spinner components - Tallcraftu
                 <x-spinner cyan dots />
                 <x-spinner sky dots />
                 <x-spinner blue dots />
-                <x-spinner Indigo dots />
+                <x-spinner indigo dots />
                 <x-spinner violet dots />
                 <x-spinner purple dots />
                 <x-spinner fuchsia dots />
@@ -111,7 +111,7 @@ new #[Layout('components.layouts.app')] #[Title('Spinner components - Tallcraftu
                 <x-spinner cyan bars />
                 <x-spinner sky bars />
                 <x-spinner blue bars />
-                <x-spinner Indigo bars />
+                <x-spinner indigo bars />
                 <x-spinner violet bars />
                 <x-spinner purple bars />
                 <x-spinner fuchsia bars />
@@ -142,7 +142,7 @@ new #[Layout('components.layouts.app')] #[Title('Spinner components - Tallcraftu
                 <x-spinner cyan pulse />
                 <x-spinner sky pulse />
                 <x-spinner blue pulse />
-                <x-spinner Indigo pulse />
+                <x-spinner indigo pulse />
                 <x-spinner violet pulse />
                 <x-spinner purple pulse />
                 <x-spinner fuchsia pulse />
@@ -164,14 +164,4 @@ new #[Layout('components.layouts.app')] #[Title('Spinner components - Tallcraftu
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Size variants" />
-            <x-on-this-page.item title="Spinner dots" />
-            <x-on-this-page.item title="Spinner bars" />
-            <x-on-this-page.item title="Spinner pulse" />
-            <x-on-this-page.item title="Customize spinner" />
-        </x-on-this-page>
-    @endslot
 </div>

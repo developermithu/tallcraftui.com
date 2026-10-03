@@ -1,167 +1,161 @@
 <?php
 
+use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
 use Livewire\Component;
-use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Configurations - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Configuration - TallCraftUI Docs')] class extends Component
+{
     //
 }; ?>
 
 <div>
+    @php
+        // The published config file, read from the installed package so this page never drifts from it.
+        $configFile = @file_get_contents(base_path('vendor/developermithu/tallcraftui/config/tallcraftui.php')) ?: '';
+
+        $defaults = collect(config('tallcraftui'))
+            ->except(['prefix', 'route_prefix', 'icons', 'upload', 'markdown'])
+            ->filter(fn ($value) => is_array($value));
+    @endphp
+
     @slot('metaTags')
-        <x-meta-tags title="Configurations - Tallcraftui" description="Tallcraftui Configurations" />
+        <x-meta-tags title="TallCraftUI configuration: prefix, icons and component defaults"
+            description="Publish config/tallcraftui.php to set a component prefix, the icon style, Markdown upload rules and default sizes, colors, radius and behavior for each component." />
     @endslot
 
-    @slot('content')
-        <x-heading title="Configurations" subtitle="TallCraftUI" description="Customize the default behavior and appearance of the component by editing the configuration file." />
-            
-        <x-code-block title="Publish the configuration file" language="bash" no-render>
-            @slot('description')
-                <p>Run the following command to publish the <code>tallcraftui.php</code> configuration file:</p>
-            @endslot
-            
-            @verbatim('docs')
+    <x-heading title="Configuration">
+        <x-slot:description>
+            TallCraftUI works without any configuration. Publish the config file when you want a component prefix or different defaults, such as a larger button size or toasts in another corner.
+        </x-slot:description>
+    </x-heading>
+
+    <x-docs.section title="Publish the configuration file">
+        <x-code language="bash">
+            @verbatim
                 php artisan vendor:publish --tag=tallcraftui-config
             @endverbatim
-        </x-code-block>
-            
-        <div class="overflow-y-auto max-h-[560px]">
-            <x-code language="php">
-                @verbatim
-                return [
-                    
-                    /**
-                    * --------------------------------------------------------------------------
-                    * Default Component Prefix
-                    * --------------------------------------------------------------------------
-                    *
-                    * The prefix applied to all components. After changing this value, be sure
-                    * to clear the view cache using `php artisan view:clear`.
-                    *
-                    * Examples:
-                    *
-                    * 'prefix' => ''       // <x-input />
-                    * 'prefix' => 'tc-'    // <x-tc-input />
-                    * 
-                    */
-                    'prefix' => env('TALLCRAFTUI_PREFIX', ''),
-                
-                    /**
-                    * --------------------------------------------------------------------------
-                    * Icon Configuration
-                    * --------------------------------------------------------------------------
-                    *
-                    * The default icon settings for the components. You can specify the type
-                    * and style of icons that should be used.
-                    *
-                    * type => Allowed: heroicons
-                    * style => Allowed: outline, solid
-                    * 
-                    */
-                    'icons' => [
-                        'type' => 'heroicons',
-                        'style' => 'outline',
-                    ],
-                
-                    /**
-                    * --------------------------------------------------------------------------
-                    * UI Components
-                    * --------------------------------------------------------------------------
-                    *
-                    * Configure the appearance and behavior of ui components.
-                    */
-                    'alert' => [
-                        'border-radius' => BorderRadius::Rounded->value,
-                    ],
-                
-                    'badge' => [
-                        'border-radius' => BorderRadius::Rounded->value,
-                    ],
-                
-                    'breadcrumb' => [
-                        'border-radius' => BorderRadius::Rounded->value,
-                    ],
-                
-                    'button' => [
-                        'size' => Size::MD->value,
-                        'border-radius' => BorderRadius::Rounded->value,
-                    ],
-                
-                    'dropdown' => [
-                        'width' => Width::W48->value,
-                        'shadow' => Shadow::Shadow->value,
-                        'position' => Position::TOP->value,
-                        'border-radius' => BorderRadius::Rounded->value,
-                    ],
-                
-                    'modal' => [
-                        'size' => Size::LG->value,
-                        'blur' => false, // Allowed: true, false
-                        'position' => Position::TOP->value,
-                        'border-radius' => BorderRadius::RoundedLg->value,
-                    ],
-                
-                    'stat' => [
-                        'border-radius' => BorderRadius::RoundedLg->value,
-                    ],
-                
-                    'menu' => [
-                        'width' => Width::W56->value,
-                        'shadow' => Shadow::Shadow->value,
-                        'border-radius' => BorderRadius::RoundedMd->value,
-                    ],
-                
-                    /**
-                    * --------------------------------------------------------------------------
-                    * Form Components
-                    * --------------------------------------------------------------------------
-                    *
-                    * Configure the appearance and behavior of form components.
-                    */
-                    'checkbox' => [
-                        'size' => Size::MD->value,
-                        'border-radius' => BorderRadius::Rounded->value,
-                    ],
-                
-                    'input' => [
-                        'border-radius' => BorderRadius::Rounded->value,
-                    ],
-                
-                    'radio' => [
-                        'size' => Size::MD->value,
-                    ],
-                
-                    'select' => [
-                        'border-radius' => BorderRadius::Rounded->value,
-                    ],
-                
-                    'textarea' => [
-                        'border-radius' => BorderRadius::Rounded->value,
-                    ],
-                
-                    'toggle' => [
-                        'border-radius' => BorderRadius::Rounded->value,
-                    ],
-                ];
-                @endverbatim
-            </x-code>
-        </div>
+        </x-code>
 
-        <x-code-block title="Clear view cache" language="bash" no-render>
-            @slot('description')
-                After modifying the configuration file, clear the view cache using the following command:
-            @endslot
+        <p>
+            This creates <code>config/tallcraftui.php</code>. Keys you leave out keep their default values, and keys added in later releases are filled in automatically, so an older published file keeps working.
+        </p>
 
-            @verbatim('docs')
+        <x-docs.callout type="warning" title="Clear the view cache after changes">
+            Component defaults are compiled into your views. Run <code>php artisan view:clear</code> after editing the config file.
+        </x-docs.callout>
+    </x-docs.section>
+
+    <x-docs.section title="Component prefix">
+        <p>
+            By default components are available as <code>&lt;x-button&gt;</code>, <code>&lt;x-input&gt;</code> and so on.
+            Set a prefix to avoid clashing with components your app already has:
+        </p>
+
+        <x-code language="php" filename="config/tallcraftui.php">
+            @verbatim
+                'prefix' => env('TALLCRAFTUI_PREFIX', ''),
+
+                // 'prefix' => ''     -> <x-input />
+                // 'prefix' => 'tc-'  -> <x-tc-input />
+            @endverbatim
+        </x-code>
+
+        <p>Or set it in <code>.env</code> without publishing the config:</p>
+
+        <x-code language="env" filename=".env">
+            @verbatim
+                TALLCRAFTUI_PREFIX="tc-"
+            @endverbatim
+        </x-code>
+
+        <p>Then clear the view cache:</p>
+
+        <x-code language="bash">
+            @verbatim
                 php artisan view:clear
             @endverbatim
-        </x-code-block>
-    @endslot
+        </x-code>
+    </x-docs.section>
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Publish the configuration file" />
-            <x-on-this-page.item title="Clear view cache" />
-        </x-on-this-page>
-    @endslot
+    <x-docs.section title="Icons">
+        <p>
+            Components use <a href="https://heroicons.com" target="_blank" rel="noopener">Heroicons</a> through <code>blade-ui-kit/blade-heroicons</code>.
+            Choose the <code>outline</code> or <code>solid</code> style for all components:
+        </p>
+
+        <x-code language="php" filename="config/tallcraftui.php">
+            @verbatim
+                'icons' => [
+                    'type' => 'heroicons',
+                    'style' => 'outline', // outline or solid
+                ],
+            @endverbatim
+        </x-code>
+    </x-docs.section>
+
+    <x-docs.section title="Component defaults">
+        <p>
+            Each component reads its default size, radius, shadow, position or behavior from its own key. A prop or attribute on a single component always wins over the default.
+            These are the defaults this site runs with:
+        </p>
+
+        <div class="not-prose overflow-x-auto rounded-[var(--radius-panel)] border border-gray-200 dark:border-gray-800">
+            <table class="w-full min-w-[30rem] text-left text-sm">
+                <thead class="bg-gray-50 text-gray-900 dark:bg-white/[0.03] dark:text-gray-100">
+                    <tr>
+                        <th scope="col" class="px-4 py-2.5 font-semibold">Key</th>
+                        <th scope="col" class="px-4 py-2.5 font-semibold">Settings</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
+                    @foreach ($defaults as $key => $settings)
+                        <tr class="align-top">
+                            <td class="whitespace-nowrap px-4 py-2.5 font-mono text-[13px] font-medium text-gray-950 dark:text-white">{{ $key }}</td>
+                            <td class="px-4 py-2.5">
+                                <div class="flex flex-wrap gap-1.5">
+                                    @foreach ($settings as $name => $value)
+                                        @if (is_scalar($value))
+                                            <code class="rounded border border-gray-200 bg-gray-50 px-1.5 py-px font-mono text-xs text-gray-700 dark:border-white/10 dark:bg-white/5 dark:text-gray-300">{{ $name }}: {{ is_bool($value) ? ($value ? 'true' : 'false') : $value }}</code>
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        <p>
+            Values come from enums in <code>Developermithu\Tallcraftui\Enums</code>, such as <code>Size::LG->value</code> or <code>BorderRadius::RoundedLg->value</code>, but plain strings like <code>'lg'</code> work too.
+        </p>
+    </x-docs.section>
+
+    <x-docs.section title="Markdown uploads">
+        <p>
+            <a href="{{ route('docs.components.markdown') }}" wire:navigate><code>&lt;x-markdown&gt;</code></a> uploads images through an endpoint that TallCraftUI registers.
+            The <code>upload</code> section controls who can use it and what it accepts:
+        </p>
+
+        <x-code language="php" filename="config/tallcraftui.php">
+            @verbatim
+                'upload' => [
+                    'enabled' => env('TALLCRAFTUI_UPLOAD_ENABLED', true),
+                    'middleware' => ['web', 'auth'],
+                    'disks' => ['public'],
+                    'mimes' => ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif'],
+                    'max_size' => 2048, // in kilobytes
+                ],
+            @endverbatim
+        </x-code>
+
+        <p>Set <code>TALLCRAFTUI_UPLOAD_ENABLED=false</code> to remove the upload route entirely. SVG and HTML files are always rejected.</p>
+    </x-docs.section>
+
+    <x-docs.section title="Full configuration file">
+        <p>The complete file as published by TallCraftUI {{ app(App\Support\Docs::class)->shortVersion() }}:</p>
+
+        <x-code language="php" filename="config/tallcraftui.php" :code="$configFile" />
+    </x-docs.section>
 </div>

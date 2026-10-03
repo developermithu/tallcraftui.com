@@ -1,192 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://tallcraftui.developermithu.com/</loc>
+        <loc>https://tallcraftui.com/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs</loc>
+        <loc>https://tallcraftui.com/docs</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/installation</loc>
+        <loc>https://tallcraftui.com/docs/installation</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/configuration</loc>
+        <loc>https://tallcraftui.com/docs/configuration</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/how-to-contribute</loc>
+        <loc>https://tallcraftui.com/docs/how-to-contribute</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/input</loc>
+        <loc>https://tallcraftui.com/docs/components/input</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/textarea</loc>
+        <loc>https://tallcraftui.com/docs/components/textarea</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/markdown</loc>
+        <loc>https://tallcraftui.com/docs/components/markdown</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/radio</loc>
+        <loc>https://tallcraftui.com/docs/components/radio</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/checkbox</loc>
+        <loc>https://tallcraftui.com/docs/components/checkbox</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/toggle</loc>
+        <loc>https://tallcraftui.com/docs/components/toggle</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/select</loc>
+        <loc>https://tallcraftui.com/docs/components/select</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/password</loc>
+        <loc>https://tallcraftui.com/docs/components/password</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/color-picker</loc>
+        <loc>https://tallcraftui.com/docs/components/color-picker</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/range</loc>
+        <loc>https://tallcraftui.com/docs/components/range</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/alert</loc>
+        <loc>https://tallcraftui.com/docs/components/alert</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/avatar</loc>
+        <loc>https://tallcraftui.com/docs/components/avatar</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/badge</loc>
+        <loc>https://tallcraftui.com/docs/components/badge</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/button</loc>
+        <loc>https://tallcraftui.com/docs/components/button</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/breadcrumb</loc>
+        <loc>https://tallcraftui.com/docs/components/breadcrumb</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/dropdown</loc>
+        <loc>https://tallcraftui.com/docs/components/dropdown</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/menu</loc>
+        <loc>https://tallcraftui.com/docs/components/menu</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/modal</loc>
+        <loc>https://tallcraftui.com/docs/components/modal</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/drawer</loc>
+        <loc>https://tallcraftui.com/docs/components/drawer</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/icon</loc>
+        <loc>https://tallcraftui.com/docs/components/icon</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/rating</loc>
+        <loc>https://tallcraftui.com/docs/components/rating</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/separator</loc>
+        <loc>https://tallcraftui.com/docs/components/separator</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/stat</loc>
+        <loc>https://tallcraftui.com/docs/components/stat</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/spinner</loc>
+        <loc>https://tallcraftui.com/docs/components/spinner</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/tab</loc>
+        <loc>https://tallcraftui.com/docs/components/tab</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/accordion</loc>
+        <loc>https://tallcraftui.com/docs/components/accordion</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/card</loc>
+        <loc>https://tallcraftui.com/docs/components/card</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/clipboard</loc>
+        <loc>https://tallcraftui.com/docs/components/clipboard</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/tooltip</loc>
+        <loc>https://tallcraftui.com/docs/components/tooltip</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/progress</loc>
+        <loc>https://tallcraftui.com/docs/components/progress</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/progress-radial</loc>
+        <loc>https://tallcraftui.com/docs/components/progress-radial</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/table</loc>
+        <loc>https://tallcraftui.com/docs/components/table</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://tallcraftui.developermithu.com/docs/components/toast</loc>
+        <loc>https://tallcraftui.com/docs/components/toast</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://tallcraftui.com/docs/theming</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tallcraftui.com/docs/upgrading</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://tallcraftui.com/docs/changelog</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://tallcraftui.com/docs/components/native-select</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://tallcraftui.com/docs/components/theme-toggle</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
