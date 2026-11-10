@@ -224,7 +224,12 @@
   }
 
   & :where(li):not(:where(.not-prose *))::marker {
-    @apply text-gray-400 dark:text-gray-500;
+    color: var(--color-gray-400);
+  }
+
+  /* The dark variant can't wrap a pseudo-element: it emits ::marker:where() */
+  :where(.dark) & :where(li):not(:where(.not-prose *))::marker {
+    color: var(--color-gray-500);
   }
 
   & :where(:not(pre) > code):not(:where(.not-prose *)) {
