@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <style>
+        .tile { fill: #030712; }
+        .block { fill: #ffffff; }
+        .block-muted { fill: #ffffff; fill-opacity: .55; }
+        @media (prefers-color-scheme: dark) {
+            .tile { fill: #ffffff; }
+            .block, .block-muted { fill: #030712; }
+        }
+    </style>
+    <rect class="tile" width="24" height="24" rx="6.5" />
+    <rect x="5" y="5.5" width="14" height="4" rx="1.4" fill="#2abfae" />
+    <rect class="block" x="10" y="11" width="4" height="3.25" rx="1.1" />
+    <rect class="block-muted" x="10" y="15.5" width="4" height="3.25" rx="1.1" />
+</svg>
