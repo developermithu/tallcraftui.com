@@ -7,7 +7,7 @@ Documentation site for the [TallCraftUI](https://github.com/developermithu/tallc
 ## Commands
 
 - Use **bun** for frontend (`bun install`, `bun run dev`, `bun run build`), not npm/pnpm, even though the README mentions them.
-- For GitHub (PRs, issues, reviews), use the GitHub MCP tools; `gh` is not installed. Repo: `developermithu/tallcraftui.com`, main branch `2.x`.
+- For GitHub (PRs, issues, reviews), use the GitHub MCP tools; `gh` is not installed. Repo: `developermithu/tallcraftui.com`, main branch `3.x`.
 - Format PHP with `vendor/bin/pint`. Tests use Pest (`vendor/bin/pest`), but the only tests are the Laravel stubs.
 
 ## Build assets
