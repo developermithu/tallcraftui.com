@@ -67,10 +67,10 @@
                 @endif
             </a>
 
-            <a href="{{ config('docs.discord') }}" target="_blank" rel="noopener" data-pan="discord-link"
+            <a href="{{ config('docs.telegram') }}" target="_blank" rel="noopener" data-pan="telegram-link"
                 class="hidden size-9 items-center justify-center rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-950 sm:inline-flex dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-white"
-                aria-label="Join the TallCraftUI Discord">
-                <x-site.discord-icon class="size-[18px]" />
+                aria-label="Join the TallCraftUI Telegram community" title="Join the Telegram community for help and updates">
+                <x-site.telegram-icon class="size-[18px]" />
             </a>
 
             <x-theme-toggle data-pan="toggle-theme-switch"

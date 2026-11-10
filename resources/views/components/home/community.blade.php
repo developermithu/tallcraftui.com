@@ -9,7 +9,7 @@
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
         <div>
             <x-home.section-heading id="open-source" title="Open source, built in the open">
-                TallCraftUI is free and MIT licensed. Report bugs, suggest components and send pull requests on GitHub, or ask questions on Discord.
+                TallCraftUI is free and MIT licensed. Report bugs, suggest components and send pull requests on GitHub, or join the Telegram community to ask questions and get release updates.
             </x-home.section-heading>
 
             <div class="mt-8 flex flex-wrap gap-3">
@@ -17,9 +17,9 @@
                     <x-site.github-icon class="size-4" />
                     Star on GitHub
                 </x-button>
-                <x-button link="{{ config('docs.discord') }}" external flat gray class="text-gray-700 hover:text-gray-950 dark:text-gray-300 dark:hover:text-white normal-case tracking-normal">
-                    <x-site.discord-icon class="size-4" />
-                    Join Discord
+                <x-button link="{{ config('docs.telegram') }}" external flat gray class="text-gray-700 hover:text-gray-950 dark:text-gray-300 dark:hover:text-white normal-case tracking-normal">
+                    <x-site.telegram-icon class="size-4" />
+                    Join Telegram
                 </x-button>
                 <x-button :link="route('docs.contribution')" label="Contribute" flat gray class="text-gray-700 hover:text-gray-950 dark:text-gray-300 dark:hover:text-white normal-case tracking-normal" />
             </div>

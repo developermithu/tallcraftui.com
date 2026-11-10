@@ -31,7 +31,7 @@
             <h2 class="text-sm font-semibold">Community</h2>
             <ul role="list" class="mt-3 space-y-2 text-sm">
                 <li><a href="{{ config('docs.repository') }}" target="_blank" rel="noopener" class="text-gray-600 hover:text-gray-950 dark:text-gray-400 dark:hover:text-white">GitHub</a></li>
-                <li><a href="{{ config('docs.discord') }}" target="_blank" rel="noopener" class="text-gray-600 hover:text-gray-950 dark:text-gray-400 dark:hover:text-white">Discord</a></li>
+                <li><a href="{{ config('docs.telegram') }}" target="_blank" rel="noopener" class="text-gray-600 hover:text-gray-950 dark:text-gray-400 dark:hover:text-white">Telegram</a></li>
                 <li><a href="{{ config('docs.repository') }}/issues" target="_blank" rel="noopener" class="text-gray-600 hover:text-gray-950 dark:text-gray-400 dark:hover:text-white">Report an issue</a></li>
                 <li><a href="{{ route('docs.changelog') }}" wire:navigate class="text-gray-600 hover:text-gray-950 dark:text-gray-400 dark:hover:text-white">Changelog</a></li>
                 <li><a href="{{ route('docs.contribution') }}" wire:navigate class="text-gray-600 hover:text-gray-950 dark:text-gray-400 dark:hover:text-white">Contributing</a></li>

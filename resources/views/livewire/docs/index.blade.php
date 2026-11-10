@@ -162,7 +162,7 @@ new #[Layout('components.layouts.app')] #[Title('Introduction - TallCraftUI Docs
     <x-docs.section title="Get help">
         <p>
             Found a bug or missing feature? <a href="{{ config('docs.repository') }}/issues" target="_blank" rel="noopener">Open an issue on GitHub</a>.
-            For questions, join the <a href="{{ config('docs.discord') }}" target="_blank" rel="noopener">Discord community</a>.
+            For questions and release updates, join the <a href="{{ config('docs.telegram') }}" target="_blank" rel="noopener">Telegram community</a>.
             Every release is listed in the <a href="{{ route('docs.changelog') }}" wire:navigate>changelog</a>.
         </p>
     </x-docs.section>

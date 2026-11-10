@@ -53,9 +53,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ config('docs.discord') }}" target="_blank" rel="noopener"
+                        <a href="{{ config('docs.telegram') }}" target="_blank" rel="noopener"
                             class="flex items-center justify-between gap-2 rounded-md px-3 py-1.5 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-950 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
-                            Discord
+                            Telegram
                             <x-icon name="arrow-up-right" class="size-3.5 text-gray-400" />
                         </a>
                     </li>

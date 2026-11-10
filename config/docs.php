@@ -34,7 +34,7 @@ return [
     'docs_repository' => 'https://github.com/developermithu/tallcraftui.com',
     'source_branch' => '3.x',
     'docs_branch' => '3.x',
-    'discord' => 'https://discord.gg/gmFTB9YRV6',
+    'telegram' => 'https://t.me/tallcraftui',
     'packagist' => 'https://packagist.org/packages/developermithu/tallcraftui',
 
     /*

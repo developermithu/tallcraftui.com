@@ -23,7 +23,7 @@ new #[Layout('components.layouts.app')] #[Title('Upgrade guide - TallCraftUI Doc
     </x-heading>
 
     <x-docs.callout type="tip" title="Before you start">
-        Commit your work so you can review the changes with git. If you get stuck, ask on <a href="{{ config('docs.discord') }}" target="_blank" rel="noopener">Discord</a> or
+        Commit your work so you can review the changes with git. If you get stuck, ask in the <a href="{{ config('docs.telegram') }}" target="_blank" rel="noopener">Telegram community</a> or
         <a href="{{ config('docs.repository') }}/issues" target="_blank" rel="noopener">open an issue</a>.
     </x-docs.callout>
 

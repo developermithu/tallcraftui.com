@@ -1,6 +1,6 @@
 @inject('docs', 'App\Support\Docs')
 
-<x-dropdown bottom-start class="w-60 p-1.5 dark:bg-gray-800">
+<x-dropdown bottom-start w-60 class="p-1.5 dark:bg-gray-800">
     <x-slot:trigger>
         <button type="button" :aria-expanded="open.toString()" aria-haspopup="true"
             aria-label="TallCraftUI version {{ $docs->shortVersion() }}, switch documentation version"
