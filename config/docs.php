@@ -43,8 +43,8 @@ return [
      */
     'versions' => [
         ['label' => '3.x', 'current' => true, 'url' => null, 'note' => 'Livewire 4'],
-        ['label' => '2.x', 'current' => false, 'url' => 'https://github.com/developermithu/tallcraftui/tree/2.x', 'note' => 'Livewire 3'],
-        ['label' => '1.x', 'current' => false, 'url' => 'https://v1-tallcraftui.developermithu.com', 'note' => 'Legacy'],
+        ['label' => '2.x', 'current' => false, 'url' => 'https://v2.tallcraftui.com/docs/installation', 'note' => 'Livewire 3'],
+        ['label' => '1.x', 'current' => false, 'url' => '', 'note' => 'Legacy'],
     ],
 
     'sections' => [

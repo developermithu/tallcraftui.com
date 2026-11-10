@@ -17,7 +17,7 @@ new #[Layout('components.layouts.app')] #[Title('Upgrade guide - TallCraftUI Doc
 
     <x-heading title="Upgrade guide">
         <x-slot:description>
-            Upgrading from 2.x to 3.0 takes about 30 minutes for most apps. 3.0 keeps every component tag, prop, variant attribute and config key from 2.x.
+            Upgrading from <a href="https://v2.tallcraftui.com/docs/installation" target="_blank" rel="noopener">2.x</a> to 3.0 takes about 30 minutes for most apps. 3.0 keeps every component tag, prop, variant attribute and config key from 2.x.
             The breaking changes are the platform requirements, a few <code>wire:model</code> behaviors and the hardened Markdown upload endpoint.
         </x-slot:description>
     </x-heading>
