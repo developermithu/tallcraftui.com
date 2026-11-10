@@ -9,8 +9,8 @@
     // $tag = $latestRelease['tag_name'] ?? null;
     // $url = $latestRelease['html_url'] ?? null;
 
-    $tag = 'v3.0.0-beta.1';
-    $url = 'https://github.com/developermithu/tallcraftui/releases/tag/v3.0.0-beta.1';
+    $tag = 'v3';
+    $url = 'https://tallcraftui.com';
 @endphp
 
 <div x-data="{
@@ -24,9 +24,9 @@
     <div class="flex items-center justify-center gap-10 px-6 lg:justify-between">
         <a target="_blank" href="{{ $url }}" class="flex items-center gap-2 text-sm text-white">
             <x-icon name="gift" />
-            <strong class="font-semibold">TallCraftUI {{ $tag }} is here</strong>
+            <strong class="font-semibold">You are browsing the old v2.x docs</strong>
             <span class="hidden w-2 mt-0.5 h-px bg-gray-100 xxs:block"></span>
-            <span class="hidden xxs:inline-block"> see what’s new! </span>
+            <span class="hidden xxs:inline-block"> new {{ $tag }}.x is available </span>
         </a>
     </div>
 </div>

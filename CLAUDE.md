@@ -2,12 +2,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-Documentation site for the [TallCraftUI](https://github.com/developermithu/tallcraftui) Blade component library (Laravel 12, Livewire 3 + Volt, Tailwind 4). Served locally by Herd at http://tallcraftui.test.
+Documentation site for the [TallCraftUI](https://github.com/developermithu/tallcraftui) Blade component library. Served locally by Herd at http://tallcraftui.test.
+
+The default docs site is now **TallCraftUI 3** (`3.x` branch: Laravel 13, Livewire 4, Tailwind 4, redesigned site). The `2.x` branch is the legacy TallCraftUI 2 docs (Laravel 12, Livewire 3 + Volt, Tailwind 4). Work on `2.x` only when the user explicitly names TallCraftUI 2 docs; otherwise use `3.x`, which is the main branch. The guidance below describes the 2.x codebase.
 
 ## Commands
 
 - Use **bun** for frontend (`bun install`, `bun run dev`, `bun run build`), not npm/pnpm, even though the README mentions them.
-- For GitHub (PRs, issues, reviews), use the GitHub MCP tools; `gh` is not installed. Repo: `developermithu/tallcraftui.developermithu.com`, main branch `2.x`.
+- For GitHub (PRs, issues, reviews), use the GitHub MCP tools; `gh` is not installed. Repo: `developermithu/tallcraftui.developermithu.com`, main branch `3.x` (TallCraftUI 2 docs live on `2.x`).
 - Format PHP with `vendor/bin/pint`. Tests use Pest (`vendor/bin/pest`), but the only tests are the Laravel stubs.
 
 ## Build assets
