@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Alert components - Tallcraftui')] 
+#[Title('Alert - TallCraftUI Components')] 
 class extends Component {
     //
 }; ?>
@@ -90,7 +90,7 @@ class extends Component {
                 <x-alert title="Cyan" cyan />
                 <x-alert title="Sky" sky />
                 <x-alert title="Blue" blue />
-                <x-alert title="Indigo" Indigo />
+                <x-alert title="Indigo" indigo />
                 <x-alert title="Violet" violet />
                 <x-alert title="Purple" purple />
                 <x-alert title="Fuchsia" fuchsia />
@@ -114,14 +114,4 @@ class extends Component {
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Alert description" />
-            <x-on-this-page.item title="Alert dismissible" />
-            <x-on-this-page.item title="Custom slots" />
-            <x-on-this-page.item title="Color variants" />
-            <x-on-this-page.item title="Rounded corner" />
-        </x-on-this-page>
-    @endslot
 </div>

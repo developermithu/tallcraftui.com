@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Stat components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Stat - TallCraftUI Components')] class extends Component {
     //
 }; ?>
 
@@ -50,12 +50,4 @@ new #[Layout('components.layouts.app')] #[Title('Stat components - Tallcraftui')
 
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Icon right" />
-            <x-on-this-page.item title="Color variants" />
-            <x-on-this-page.item title="Customization" />
-        </x-on-this-page>
-    @endslot
 </div>

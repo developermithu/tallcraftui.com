@@ -197,7 +197,7 @@
         @endverbatim
     </x-code-block>
 
-    <h2 class="pt-5 pb-2" id="default-settings">Default settings</h2>
+    <h2 id="default-settings">Default settings</h2>
 
     <p>Change toast default settings according your needs <code>config/tallcraftui.php</code> </p>
 
@@ -214,18 +214,4 @@
         @endverbatim
     </x-code-block>
 
-    @slot('aside')
-    <x-on-this-page>
-        <x-on-this-page.item title="Basic usage" />
-        <x-on-this-page.item title="Toast type" />
-        <x-on-this-page.item title="Toast position" />
-        <x-on-this-page.item title="With progress bar" />
-        <x-on-this-page.item title="With redirecting" />
-        <x-on-this-page.item title="Duration" />
-        <x-on-this-page.item title="Persist" />
-        <x-on-this-page.item title="With description" />
-        <x-on-this-page.item title="All available props" />
-        <x-on-this-page.item title="Default settings" />
-    </x-on-this-page>
-@endslot
 </div>

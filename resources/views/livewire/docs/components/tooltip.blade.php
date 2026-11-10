@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Tooltip components - Tallcraftui')] 
+#[Title('Tooltip - TallCraftUI Components')] 
 class extends Component {
     //
 }; ?>
@@ -63,7 +63,7 @@ class extends Component {
             @endverbatim
         </x-code-block>
 
-        <h2 class="pt-5 pb-2" id="default-settings">Default settings</h2>
+        <h2 id="default-settings">Default settings</h2>
 
         <p>Change <strong>tooltip</strong> default settings according your needs <code>config/tallcraftui.php</code> </p>
             
@@ -81,14 +81,4 @@ class extends Component {
         </x-code>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Tooltip position" />
-            <x-on-this-page.item title="Gradient tooltip" />
-            <x-on-this-page.item title="Without transition" />
-            <x-on-this-page.item title="Without arrow" />
-            <x-on-this-page.item title="Default settings" />
-        </x-on-this-page>
-    @endslot
 </div>

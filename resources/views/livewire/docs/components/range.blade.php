@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title, Validate};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Range Slider components - Tallcraftui')] 
+#[Title('Range - TallCraftUI Components')] 
 class extends Component {
     #[Validate('required|gt:0')]
     public int $level = 25;
@@ -93,7 +93,7 @@ class extends Component {
                 <x-range label="Cyan" cyan />
                 <x-range label="Sky" sky />
                 <x-range label="Blue" blue />
-                <x-range label="Indigo" Indigo />
+                <x-range label="Indigo" indigo />
                 <x-range label="Violet" violet />
                 <x-range label="Purple" purple />
                 <x-range label="Fuchsia" fuchsia />
@@ -102,11 +102,4 @@ class extends Component {
         @endverbatim
     </x-code-block>
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Range limit and Step" />
-            <x-on-this-page.item title="Color variants" />
-        </x-on-this-page>
-    @endslot
 </div>

@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Button components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Button - TallCraftUI Components')] class extends Component {
     public function delete()
     {
       return 'delete';
@@ -47,7 +47,7 @@ new #[Layout('components.layouts.app')] #[Title('Button components - Tallcraftui
                 <x-button label="Cyan" cyan />
                 <x-button label="Sky" sky />
                 <x-button label="Blue" blue />
-                <x-button label="Indigo" Indigo />
+                <x-button label="Indigo" indigo />
                 <x-button label="Violet" violet />
                 <x-button label="Purple" purple />
                 <x-button label="Fuchsia" fuchsia />
@@ -78,7 +78,7 @@ new #[Layout('components.layouts.app')] #[Title('Button components - Tallcraftui
                 <x-button label="Cyan" cyan outline />
                 <x-button label="Sky" sky outline />
                 <x-button label="Blue" blue outline />
-                <x-button label="Indigo" Indigo outline />
+                <x-button label="Indigo" indigo outline />
                 <x-button label="Violet" violet outline />
                 <x-button label="Purple" purple outline />
                 <x-button label="Fuchsia" fuchsia outline />
@@ -109,7 +109,7 @@ new #[Layout('components.layouts.app')] #[Title('Button components - Tallcraftui
                 <x-button label="Cyan" cyan flat />
                 <x-button label="Sky" sky flat />
                 <x-button label="Blue" blue flat />
-                <x-button label="Indigo" Indigo flat />
+                <x-button label="Indigo" indigo flat />
                 <x-button label="Violet" violet flat />
                 <x-button label="Purple" purple flat />
                 <x-button label="Fuchsia" fuchsia flat />
@@ -132,7 +132,6 @@ new #[Layout('components.layouts.app')] #[Title('Button components - Tallcraftui
                 <x-button label="Button" md /> {{-- default --}}
                 <x-button label="Button" lg />
                 <x-button label="Button" xl />
-                <x-button label="Button" 2xl />
             @endverbatim
         </x-code-block>
 
@@ -182,7 +181,7 @@ new #[Layout('components.layouts.app')] #[Title('Button components - Tallcraftui
                 <x-button icon="archive-box-x-mark" rose circle />
                 <x-button icon="bars-3" gray circle />
                 <x-button icon="bell" blue circle />
-                <x-button icon="chat-bubble-left-ellipsis" fuschsia circle />
+                <x-button icon="chat-bubble-left-ellipsis" fuchsia circle />
             @endverbatim
         </x-code-block>
 
@@ -196,7 +195,7 @@ new #[Layout('components.layouts.app')] #[Title('Button components - Tallcraftui
                 <x-button icon="archive-box-x-mark" rose outline circle />
                 <x-button icon="bars-3" gray outline circle />
                 <x-button icon="bell" blue outline circle />
-                <x-button icon="chat-bubble-left-ellipsis" fuschsia outline circle />
+                <x-button icon="chat-bubble-left-ellipsis" fuchsia outline circle />
             @endverbatim
         </x-code-block>
 
@@ -210,7 +209,7 @@ new #[Layout('components.layouts.app')] #[Title('Button components - Tallcraftui
                 <x-button icon="archive-box-x-mark" rose flat circle />
                 <x-button icon="bars-3" gray flat circle />
                 <x-button icon="bell" blue flat circle />
-                <x-button icon="chat-bubble-left-ellipsis" fuschsia flat circle />
+                <x-button icon="chat-bubble-left-ellipsis" fuchsia flat circle />
             @endverbatim
         </x-code-block>
 
@@ -229,18 +228,4 @@ new #[Layout('components.layouts.app')] #[Title('Button components - Tallcraftui
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Outline buttons" />
-            <x-on-this-page.item title="Flat buttons" />
-            <x-on-this-page.item title="Size variants" />
-            <x-on-this-page.item title="Rounded corner" />
-            <x-on-this-page.item title="Button with icon" />
-            <x-on-this-page.item title="Circle buttons" />
-            <x-on-this-page.item title="Circle buttons - outline" />
-            <x-on-this-page.item title="Circle buttons - flat" />
-            <x-on-this-page.item title="With spinner" />
-        </x-on-this-page>
-    @endslot
 </div>

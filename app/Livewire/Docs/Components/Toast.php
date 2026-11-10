@@ -3,8 +3,12 @@
 namespace App\Livewire\Docs\Components;
 
 use Developermithu\Tallcraftui\Traits\WithTcToast;
+use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Layout('components.layouts.app')]
+#[Title('Toast - TallCraftUI Components')]
 class Toast extends Component
 {
     use WithTcToast;
@@ -18,16 +22,15 @@ class Toast extends Component
     public function showToast2()
     {
         $this->success(
-            title: 'User created successfully', 
+            title: 'User created successfully',
             description: 'Your changes have been saved permanently.'
         );
     }
-    
 
     public function showToast3()
     {
         $this->success(
-            title: 'User created successfully', 
+            title: 'User created successfully',
             description: 'Your changes have been saved permanently.',
             showProgress: true
         );
@@ -36,7 +39,7 @@ class Toast extends Component
     public function showToast4()
     {
         $this->success(
-            title: 'User created successfully', 
+            title: 'User created successfully',
             description: 'Your changes have been saved permanently.',
             showCloseIcon: true
         );
@@ -107,7 +110,7 @@ class Toast extends Component
     {
         $this->success(title: 'User created successfully', description: 'Your changes have been saved permanently.');
     }
-    
+
     public function render()
     {
         return view('livewire.docs.components.toast');

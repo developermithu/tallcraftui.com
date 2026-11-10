@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Clipboard components - Tallcraftui')] 
+#[Title('Clipboard - TallCraftUI Components')] 
 class extends Component {
     //
 }; ?>
@@ -59,9 +59,4 @@ class extends Component {
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-        </x-on-this-page>
-    @endslot
 </div>

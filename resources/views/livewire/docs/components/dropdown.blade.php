@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Dropdown components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Dropdown - TallCraftUI Components')] class extends Component {
     //
 }; ?>
 
@@ -301,7 +301,7 @@ new #[Layout('components.layouts.app')] #[Title('Dropdown components - Tallcraft
             @endverbatim
         </x-code-block>
         
-        <h2 class="pt-5 pb-2" id="default-settings">Disable focus trap</h2>
+        <h2 id="default-settings">Default settings</h2>
 
         <p>Change dropdown default settings according your needs <code>config/tallcraftui.php</code> </p>
             
@@ -320,15 +320,4 @@ new #[Layout('components.layouts.app')] #[Title('Dropdown components - Tallcraft
         </x-code>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Dropdown position" />
-            <x-on-this-page.item title="Dropdown size" />
-            <x-on-this-page.item title="Without transition" />
-            <x-on-this-page.item title="Dropdown with link" />
-            <x-on-this-page.item title="Persistent" />
-            <x-on-this-page.item title="Default settings" />
-        </x-on-this-page>
-    @endslot
 </div>

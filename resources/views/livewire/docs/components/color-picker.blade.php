@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Color picker components - Tallcraftui')] 
+#[Title('Color picker - TallCraftUI Components')] 
 class extends Component {
     public ?string $color1 = '';
     public ?string $color2 = '';
@@ -39,11 +39,4 @@ class extends Component {
         @endverbatim
     </x-code-block>
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Custom colors" />
-            <x-on-this-page.item title="Without picker" />
-        </x-on-this-page>
-    @endslot
 </div>

@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Badge components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Badge - TallCraftUI Components')] class extends Component {
 
 }; ?>
 
@@ -43,7 +43,7 @@ new #[Layout('components.layouts.app')] #[Title('Badge components - Tallcraftui'
                 <x-badge label="Cyan" cyan />
                 <x-badge label="Sky" sky />
                 <x-badge label="Blue" blue />
-                <x-badge label="Indigo" Indigo />
+                <x-badge label="Indigo" indigo />
                 <x-badge label="Violet" violet />
                 <x-badge label="Purple" purple />
                 <x-badge label="Fuchsia" fuchsia />
@@ -74,7 +74,7 @@ new #[Layout('components.layouts.app')] #[Title('Badge components - Tallcraftui'
                 <x-badge label="Cyan" cyan outline />
                 <x-badge label="Sky" sky outline />
                 <x-badge label="Blue" blue outline />
-                <x-badge label="Indigo" Indigo outline />
+                <x-badge label="Indigo" indigo outline />
                 <x-badge label="Violet" violet outline />
                 <x-badge label="Purple" purple outline />
                 <x-badge label="Fuchsia" fuchsia outline />
@@ -126,14 +126,4 @@ new #[Layout('components.layouts.app')] #[Title('Badge components - Tallcraftui'
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Outline badges" />
-            <x-on-this-page.item title="Badge with icon" />
-            <x-on-this-page.item title="Custom slot" new />
-            <x-on-this-page.item title="Size variants" />
-            <x-on-this-page.item title="Rounded corner" />
-        </x-on-this-page>
-    @endslot
 </div>

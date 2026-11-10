@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Icon components - Tallcraftui')] 
+#[Title('Icon - TallCraftUI Components')] 
 class extends Component {
     //
 }; ?>
@@ -65,7 +65,7 @@ class extends Component {
             @endverbatim
         </x-code-block>
 
-        <h2 class="pt-5 pb-2" id="default-settings">Default settings</h2>
+        <h2 id="default-settings">Default settings</h2>
 
         <p>Change icon default settings according your needs <code>config/tallcraftui.php</code> </p>
             
@@ -87,12 +87,4 @@ class extends Component {
         </x-code>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Size variants" />
-            <x-on-this-page.item title="Customize icon" />
-            <x-on-this-page.item title="Default settings" />
-        </x-on-this-page>
-    @endslot
 </div>

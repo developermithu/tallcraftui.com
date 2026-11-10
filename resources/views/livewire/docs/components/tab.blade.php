@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Tab components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Tab - TallCraftUI Components')] class extends Component {
     public string $activeTab = 'tab1';
     public string $activeTab2 = 'account';
 }; ?>
@@ -84,10 +84,4 @@ new #[Layout('components.layouts.app')] #[Title('Tab components - Tallcraftui')]
         @endverbatim
     </x-code-block>
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Switch tab" />
-        </x-on-this-page>
-    @endslot
 </div>

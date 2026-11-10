@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title, Validate};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Progress components - Tallcraftui')] 
+#[Title('Progress - TallCraftUI Components')] 
 class extends Component {
 
 }; ?>
@@ -92,15 +92,4 @@ class extends Component {
         @endverbatim
     </x-code-block>
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Divided format" />
-            <x-on-this-page.item title="Without value" />
-            <x-on-this-page.item title="With label" />
-            <x-on-this-page.item title="Label position" />
-            <x-on-this-page.item title="Size variants" />
-            <x-on-this-page.item title="Color variants" />
-        </x-on-this-page>
-    @endslot
 </div>

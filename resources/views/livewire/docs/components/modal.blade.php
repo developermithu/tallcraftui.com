@@ -3,7 +3,7 @@
 use Livewire\Attributes\{Layout, Title};
 use Livewire\Component;
 
-new #[Layout('components.layouts.app')] #[Title('Modal components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Modal - TallCraftUI Components')] class extends Component {
     public bool $openDefault = false;
     public bool $openDeleteModal = false;
     public bool $openFormModal = false;
@@ -405,7 +405,7 @@ new #[Layout('components.layouts.app')] #[Title('Modal components - Tallcraftui'
         @endverbatim
     </x-code-block>
 
-    <h2 class="pt-5 pb-2" id="default-settings">Default settings</h2>
+    <h2 id="default-settings">Default settings</h2>
 
     <p>Change modal default settings according your needs <code>config/tallcraftui.php</code> </p>
         
@@ -422,19 +422,4 @@ new #[Layout('components.layouts.app')] #[Title('Modal components - Tallcraftui'
         @endverbatim
     </x-code>
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Open with Livewire" />
-            <x-on-this-page.item title="Open with Alpine Js" />
-            <x-on-this-page.item title="Position" />
-            <x-on-this-page.item title="Persistent" />
-            <x-on-this-page.item title="Without transition" />
-            <x-on-this-page.item title="Size variants" />
-            <x-on-this-page.item title="Background blur" />
-            <x-on-this-page.item title="Rounded corner" />
-            <x-on-this-page.item title="Disable focus trap" />
-            <x-on-this-page.item title="Default settings" />
-        </x-on-this-page>
-    @endslot
 </div>

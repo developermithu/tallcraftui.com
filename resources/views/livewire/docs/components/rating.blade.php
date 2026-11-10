@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title, Validate};
 
-new #[Layout('components.layouts.app')] #[Title('Rating components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Rating - TallCraftUI Components')] class extends Component {
     public int $rating = 3;
     public int $rating2 = 3;
     public int $rating3 = 3;
@@ -56,12 +56,4 @@ new #[Layout('components.layouts.app')] #[Title('Rating components - Tallcraftui
         @endverbatim
     </x-code-block>
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Size variants" />
-            <x-on-this-page.item title="Custom icon" />
-            <x-on-this-page.item title="Total icons" />
-        </x-on-this-page>
-    @endslot
 </div>

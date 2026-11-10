@@ -10,80 +10,43 @@
 
 @php
     $slug = Str::slug($title);
-    $code = (string) Str::of($slot);
-
-    if (Str::contains($code, "('docs')")) {
-        $code = Str::replace("('docs')", '', $code);
-        $code = trim($code);
-    }
-
-    $lines = explode("\n", $code);
-    $minIndent = PHP_INT_MAX;
-
-    foreach ($lines as $line) {
-        if (trim($line) === '') continue;
-        $indent = strlen($line) - strlen(ltrim($line));
-        $minIndent = min($minIndent, $indent);
-    }
-
-    $cleanedLines = array_map(function ($line) use ($minIndent) {
-        if (trim($line) === '') return '';
-        return substr($line, $minIndent);
-    }, $lines);
-
-    $code = trim(implode("\n", $cleanedLines));
+    $code = App\Support\Docs::cleanCode((string) $slot);
 @endphp
 
-<div x-data="{ visible: {{ $noRender ? 'true' : 'false' }} }" @class(['space-y-3 code-container', 'pt-5' => $title])>
+<div {{ $attributes->only('id')->merge(['class' => 'docs-example']) }}>
     @if ($title)
-        <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <h2 id="{{ $slug }}" class="group">
-                    <a href="#{{ $slug }}"
-                        class="absolute -ml-8 no-underline transition opacity-0 group-hover:opacity-70">#</a>
-                    {{ $title }}
-                </h2>
+        <h2 id="{{ $slug }}" class="group flex items-center gap-2.5">
+            <a href="#{{ $slug }}" class="text-inherit no-underline">{{ $title }}</a>
+            <span aria-hidden="true" class="hidden text-gray-300 group-hover:inline dark:text-gray-600">#</span>
 
-                @if ($new)
-                    <x-badge label="New" amber />
-                @endif
-            </div>
-
-            @if (!$noRender && !$hideButton)
-                <x-button @click="visible = !visible" icon="code-bracket" flat sm />
+            @if ($new)
+                <span class="rounded-full bg-brand-100 px-2 py-0.5 text-[11px] font-semibold text-brand-800 dark:bg-brand-400/15 dark:text-brand-200">New</span>
             @endif
-        </div>
+        </h2>
     @endif
 
     @isset($description)
-        <div>
-            {{ $description }}
-        </div>
+        <div class="mt-3 space-y-3">{{ $description }}</div>
     @endisset
 
-    <div>
-        @if (!$noRender)
-            <div x-show="!visible" x-cloak @class([
-                'p-5 border rounded-lg dark:border-slate-700 md:p-7 flex flex-col flex-wrap gap-4',
-                'flex-row! items-center ' => $inline,
+    <div class="not-prose mt-5 rounded-[var(--radius-panel)] border border-gray-200 dark:border-gray-800">
+        @unless ($noRender)
+            <div @class([
+                'preview-canvas flex min-w-0 flex-col gap-4 p-5 sm:p-8',
+                'rounded-t-[calc(var(--radius-panel)-1px)]',
+                'rounded-b-[calc(var(--radius-panel)-1px)]' => $hideButton,
+                'flex-row! flex-wrap items-center' => $inline,
             ])>
                 <?php echo Blade::render($code); ?>
             </div>
-        @endif
+        @endunless
 
-        <div x-show="visible" x-cloak class="relative">
-            <pre><x-torchlight-code language="{{ $language }}" @class([
-                "space-y-2 code",
-                'space-y-0!' => $attributes->get('space-none'),
-                'space-y-0.5!' => $attributes->get('space-0.5'),
-                'space-y-1!' => $attributes->get('space-1'),
-            ])>
-                {!! $code !!}
-            </x-torchlight-code></pre>
-
-            @if (!$noCopy)
-                <x-copy-button />
-            @endif
-        </div>
+        @unless ($hideButton)
+            <x-docs.code-panel :code="$code" :language="$language" :copy="! $noCopy" @class([
+                'rounded-b-[calc(var(--radius-panel)-1px)]',
+                'rounded-t-[calc(var(--radius-panel)-1px)]' => $noRender,
+                'border-t border-gray-200 dark:border-gray-800' => ! $noRender,
+            ]) />
+        @endunless
     </div>
 </div>

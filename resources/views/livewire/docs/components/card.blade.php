@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Card components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Card - TallCraftUI Components')] class extends Component {
     //
 }; ?>
 
@@ -107,11 +107,4 @@ new #[Layout('components.layouts.app')] #[Title('Card components - Tallcraftui')
         @endverbatim
     </x-code-block>
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Card with image" />
-            <x-on-this-page.item title="Pricing card" />
-        </x-on-this-page>
-    @endslot
 </div>

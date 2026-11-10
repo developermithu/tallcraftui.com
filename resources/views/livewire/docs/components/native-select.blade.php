@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Native Select components - Tallcraftui')] 
+#[Title('Native select - TallCraftUI Components')] 
 class extends Component {}; ?>
 
 <div>
@@ -140,16 +140,4 @@ class extends Component {}; ?>
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Customize option attributes" new />
-            <x-on-this-page.item title="Custom placeholder" />
-            <x-on-this-page.item title="Without placeholder" new />
-            <x-on-this-page.item title="Custom slot" />
-            <x-on-this-page.item title="With hint" />
-            <x-on-this-page.item title="Size variants" />
-            <x-on-this-page.item title="With enum class" new />
-        </x-on-this-page>
-    @endslot
 </div>

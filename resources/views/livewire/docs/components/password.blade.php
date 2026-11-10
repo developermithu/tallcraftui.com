@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Password components - Tallcraftui')] 
+#[Title('Password - TallCraftUI Components')] 
 class extends Component {
     public ?string $password1 = '';
     public ?string $password2 = '';
@@ -32,10 +32,4 @@ class extends Component {
         @endverbatim
     </x-code-block>    
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Password generator" />
-        </x-on-this-page>
-    @endslot
 </div>

@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Menu components - Tallcraftui')] class extends Component {
+new #[Layout('components.layouts.app')] #[Title('Menu - TallCraftUI Components')] class extends Component {
     //
 }; ?>
 
@@ -87,7 +87,7 @@ new #[Layout('components.layouts.app')] #[Title('Menu components - Tallcraftui')
             @endverbatim
         </x-code-block>
 
-        <h2 class="pt-5 pb-2" id="default-settings">Default settings</h2>
+        <h2 id="default-settings">Default settings</h2>
 
         <p>Change menu default settings according your needs <code>config/tallcraftui.php</code> </p>
 
@@ -104,12 +104,4 @@ new #[Layout('components.layouts.app')] #[Title('Menu components - Tallcraftui')
         </x-code>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Menu with link" />
-            <x-on-this-page.item title="Customization" />
-            <x-on-this-page.item title="Default settings" />
-        </x-on-this-page>
-    @endslot
 </div>

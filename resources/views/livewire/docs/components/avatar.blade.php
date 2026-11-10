@@ -5,7 +5,7 @@ use Livewire\Attributes\{Layout, Title};
 
 new 
 #[Layout('components.layouts.app')] 
-#[Title('Avatar components - Tallcraftui')] 
+#[Title('Avatar - TallCraftUI Components')] 
 class extends Component {
     public string $imageUrl = '/assets/img/avatar.jpg';
 }; ?>
@@ -180,17 +180,4 @@ class extends Component {
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Default avatar" />
-            <x-on-this-page.item title="Avatar with text" />
-            <x-on-this-page.item title="Size variants" />
-            <x-on-this-page.item title="Stacked" />
-            <x-on-this-page.item title="Avatar with ring-3" />
-            <x-on-this-page.item title="Avatar with badge" />
-            <x-on-this-page.item title="Badge with Ring" />
-            <x-on-this-page.item title="Rounded corner" />
-        </x-on-this-page>
-    @endslot
 </div>

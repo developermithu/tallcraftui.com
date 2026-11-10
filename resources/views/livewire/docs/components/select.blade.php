@@ -3,7 +3,7 @@
 use Livewire\Component;
 use Livewire\Attributes\{Layout, Title};
 
-new #[Layout('components.layouts.app')] #[Title('Select components - Tallcraftui')] class extends Component {}; ?>
+new #[Layout('components.layouts.app')] #[Title('Select - TallCraftUI Components')] class extends Component {}; ?>
 
 <div>
     @slot('metaTags')
@@ -129,7 +129,7 @@ new #[Layout('components.layouts.app')] #[Title('Select components - Tallcraftui
                         [
                             'id' => 2,
                             'name' => 'Caleb Porzio',
-                            'avatar' => 'https://pbs.twimg.com/profile_images/1748020965995335681/WTNy9HSl_400x400.jpg',
+                            'avatar' => 'https://github.com/calebporzio.png?size=160',
                             'description' => 'Creator of Livewire and Alpine.js',
                         ],
                         [
@@ -141,7 +141,7 @@ new #[Layout('components.layouts.app')] #[Title('Select components - Tallcraftui
                         [
                             'id' => 4,
                             'name' => 'Jeffrey Way',
-                            'avatar' => 'https://pbs.twimg.com/profile_images/1863195807303778304/1Ka0l26C_400x400.jpg',
+                            'avatar' => 'https://github.com/JeffreyWay.png?size=160',
                             'description' => 'Creator of Laracast',
                         ],
                     ];
@@ -163,18 +163,4 @@ new #[Layout('components.layouts.app')] #[Title('Select components - Tallcraftui
         </x-code-block>
     @endslot
 
-    @slot('aside')
-        <x-on-this-page>
-            <x-on-this-page.item title="Basic usage" />
-            <x-on-this-page.item title="Multiple select" />
-            <x-on-this-page.item title="Clearable" />
-            <x-on-this-page.item title="Searchable" />
-            <x-on-this-page.item title="Limit selection" />
-            <x-on-this-page.item title="With image" />
-            <x-on-this-page.item title="With description" />
-            <x-on-this-page.item title="With enum class" />
-            <x-on-this-page.item title="All property" />
-            <x-on-this-page.item title="Size variants" />
-        </x-on-this-page>
-    @endslot
 </div>
